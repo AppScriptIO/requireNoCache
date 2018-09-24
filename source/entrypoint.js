@@ -1,11 +1,10 @@
-let _invalidateRequireCacheForFile = function(filePath){
+function invalidateRequireCacheForFile(filePath){
 	delete require.cache[require.resolve(filePath)];
 };
-let requireNoCache =  function(filePath){
-	_invalidateRequireCacheForFile(filePath);
-	return require(filePath).default;
+export function requireNoCache(filePath){
+	invalidateRequireCacheForFile(filePath);
+	return require(filePath);
 };
-
 
 // List of require without cache modules: 
 // • https://github.com/nazomikan/require-without-cache/blob/master/index.js
