@@ -1,1 +1,1 @@
-requireNoCache
+./documentation/information.md
